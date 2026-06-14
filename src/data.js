@@ -12,8 +12,8 @@ export const profile = {
 }
 
 export const about = [
-  "Hello! I'm Mark, a versatile web developer proficient in both front-end and back-end technologies. On the front-end I specialize in crafting visually engaging, responsive interfaces with HTML, CSS, and JavaScript, translating design concepts into pixel-perfect, interactive websites. On the back-end I focus on server-side scripting and database design, building robust infrastructures that power dynamic web applications.",
-  "My full-stack proficiency lets me integrate the user interface tightly with the back-end, resulting in cohesive, maintainable solutions. I'm always eager to bring a holistic approach to new projects and collaborate with teams to ship exceptional digital experiences."
+  "I'm Mark — a full-stack software engineer with over five years of experience building and scaling web applications across the entire stack. On the front-end I craft responsive, accessible interfaces with modern frameworks like Vue and Angular; on the back-end I architect secure, well-structured APIs and database systems with Laravel, Node.js, and MySQL/PostgreSQL that perform reliably in production.",
+  "I take ownership of clean architecture, performance, and maintainability — hardening applications against common vulnerabilities, optimizing bottlenecks, and mentoring junior developers along the way. I'm fluent with Docker and CI/CD pipelines, and I thrive on partnering with teams to turn business requirements into robust, well-engineered products."
 ]
 
 export const stacks = [
