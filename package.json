@@ -4,6 +4,9 @@
   "private": true,
   "description": "Personal portfolio of Mark Russel Baral (Vue 3 + Vite).",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
