@@ -4,6 +4,13 @@
    only adds the interactive states we now drive from Vue.
 ------------------------------------------------------------------ */
 
+/* Reset default body margin (the template doesn't), which otherwise
+   adds ~8px of horizontal scroll on mobile. */
+html,
+body {
+  margin: 0;
+}
+
 /* Scroll reveal -------------------------------------------------- */
 .reveal {
   opacity: 0;
@@ -27,18 +34,23 @@
   pointer-events: none;
 }
 
-/* Mobile / overlay menu open + close ---------------------------- */
+/* Overlay menu open + close.
+   The panel is hidden with visibility/opacity (NOT an off-screen
+   `translateX(100%)`). A fixed element translated past the right edge
+   inflates the document's width, which on mobile pushes the fixed
+   burger off-screen and only shows a sliver of the menu. Keeping the
+   panel in place avoids that horizontal-overflow trap entirely. */
 .m-menu {
-  transform: translateX(100%);
+  overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transition: transform 0.5s cubic-bezier(0.4, 0.1, 0.2, 1),
-    opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 .m-menu.is-open {
-  transform: translateX(0);
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 .m-menu .main-items > li,
 .m-menu .head,
@@ -411,10 +423,16 @@
     margin-left: 0 !important;
   }
 
-  /* Avoid any horizontal overflow from the fluid template. */
-  html,
-  body {
-    overflow-x: hidden !important;
+  /* Overlay menu fills most of the screen and its content uses the
+     full panel width (the template's left:20% offset looks cramped). */
+  .m-menu {
+    width: 80% !important;
+  }
+  .m-menu .m-menu-inner {
+    left: 0 !important;
+    right: auto !important;
+    width: 100% !important;
+    padding: 0 10% !important;
   }
 }
 

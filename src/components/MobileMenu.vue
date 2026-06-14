@@ -53,8 +53,9 @@ function navigate(id) {
     </div>
   </div>
 
-  <!-- Overlay menu -->
-  <div class="m-menu" :class="{ 'is-open': open }">
+  <!-- Overlay menu. v-show (display:none when closed) keeps the panel
+       out of layout entirely, so it can't create horizontal overflow. -->
+  <div v-show="open" class="m-menu" :class="{ 'is-open': open }">
     <div class="m-menu-inner noselect">
       <div class="head m-b-2"><p class="small">Menu</p></div>
       <ul class="main-items">
